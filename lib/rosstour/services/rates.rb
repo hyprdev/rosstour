@@ -1,6 +1,7 @@
 module Rosstour::Services::Rates
   def rates_cbr
-    api_request 'rates', 'cbrfRates'
+    data = api_request 'rates', 'cbrfRates'
+    Rosstour::RateCBR.new data
   end
   def rates_oper
     api_request 'rates', 'operRates'

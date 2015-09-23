@@ -8,7 +8,7 @@ class FakeRosstour < Sinatra::Base
     end
   end
 
-  get '/gate/index.php', query: {service: 'rates', some: 'cbr'} do
+  get '/gate/index.php', query: {service: 'rates', method: 'cbrfRates'} do
     json_response 200, 'stub.json'
   end
 

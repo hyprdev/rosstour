@@ -1,4 +1,4 @@
-module Rosstour
+module Rosstour::Services
   # SERVICES = {
   #   avia:   [ :init, :search, :reservation ],
   #   geo:    [ :IpInfo, :listCityFranOffice, :listFranOfficeInCity ],
@@ -8,9 +8,8 @@ module Rosstour
   #             :VisaTextInfo, :search],
   # }
 end
-module Rosstour::Services
 
-end
 
 require 'rosstour/services/avia'
 require 'rosstour/services/rates'
+
