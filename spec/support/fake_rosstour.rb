@@ -1,7 +1,14 @@
 require 'sinatra/base'
 
 class FakeRosstour < Sinatra::Base
-  get '/gate/index.php' do
+  set(:query) do |*args|
+    condition do
+      query = Rack::Utils.parse_nested_query(request.query_string)
+      args.all? { |(key, value)| query[key.to_s] == value }
+    end
+  end
+
+  get '/gate/index.php', query: {service: 'rates', some: 'cbr'} do
     json_response 200, 'stub.json'
   end
 

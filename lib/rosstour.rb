@@ -25,7 +25,8 @@ module Rosstour
     protected
 
     def api_request(service, method, options = {})
-      options = @options.merge(options).merge({format: :json})
+      query = {"service": service ,"format": :json}
+      options = @options.merge(options).merge({query: query})
       self.class.get '/gate/index.php', options
     end
   end
