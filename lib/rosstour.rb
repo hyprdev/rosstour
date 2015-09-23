@@ -8,6 +8,7 @@ require "rosstour/gate"
 
 module Rosstour
   include Documents
+  include Exceptions
 
   class << self
     def new(uri, *args)

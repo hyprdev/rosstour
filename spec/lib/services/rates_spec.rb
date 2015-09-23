@@ -15,11 +15,11 @@ describe Rosstour::Services::Rates do
     describe 'returned document' do
       it 'should have USD rate' do
         expect( rosstour.rates_cbr ).to respond_to :usd
-        expect( rosstour.rates_cbr.usd ).to be_a Numeric
+        expect( rosstour.rates_cbr.usd ).not_to be nil
       end
       it 'should have EUR rate' do
         expect( rosstour.rates_cbr ).to respond_to :eur
-        expect( rosstour.rates_cbr.eur ).to be_a Numeric
+        expect( rosstour.rates_cbr.eur ).not_to be nil
       end
     end
   end

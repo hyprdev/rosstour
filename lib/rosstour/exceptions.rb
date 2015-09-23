@@ -1,4 +1,5 @@
-module Rosstour
+module Rosstour::Exceptions
+
   class Error < StandardError; end
   class ServiceNotFound < Error; end
   class MethodNotFound < Error; end
