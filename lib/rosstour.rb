@@ -3,6 +3,7 @@ require "httparty"
 require "rosstour/version"
 require "rosstour/exceptions"
 require "rosstour/services"
+require "rosstour/documents"
 
 module Rosstour
   class << self
