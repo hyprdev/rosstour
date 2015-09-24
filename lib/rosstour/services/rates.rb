@@ -8,7 +8,12 @@ module Rosstour::Services::Rates
     end
   end
   def rates_oper
-    api_request 'rates', 'operRates'
+    data = api_request 'rates', 'operRates'
+    if data.is_a? Array
+      data.map { |rate| Rosstour::RateOper.new rate }
+    else
+      raise Rosstour::MalformedResponse.new "Unsufficient data: #{data.inspect}"
+    end
   end
 end
 

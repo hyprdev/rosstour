@@ -11,4 +11,8 @@ module Rosstour::Documents
   class RateCBR < Document
     attr_accessor :usd, :eur
   end
+
+  class RateOper < RateCBR
+    attr_accessor :name, :abbr, :types, :url
+  end
 end

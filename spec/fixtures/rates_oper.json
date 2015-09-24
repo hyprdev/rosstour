@@ -1,0 +1,18 @@
+{
+	"success": true,
+	"data": [{
+		"name": "Coral Travel",
+		"abbr": "COR",
+		"types": ["tour"],
+		"usd": "32.3800",
+		"eur": "41.9900",
+		"url": "coral.ru"
+	}, {
+		"name": "Натали Турс",
+		"abbr": "NAT",
+		"types": ["tour"],
+		"usd": "32.4000",
+		"eur": "42.0000",
+		"url": "natalie-tours.ru"
+	}]
+}
