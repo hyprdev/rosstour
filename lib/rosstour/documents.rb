@@ -15,4 +15,8 @@ module Rosstour::Documents
   class RateOper < RateCBR
     attr_accessor :name, :abbr, :types, :url
   end
+
+  class TourSrc < Document
+    attr_accessor :id, :name
+  end
 end

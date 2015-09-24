@@ -12,4 +12,4 @@ end
 
 require 'rosstour/services/avia'
 require 'rosstour/services/rates'
-
+require 'rosstour/services/tours'
