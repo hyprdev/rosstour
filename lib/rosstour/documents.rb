@@ -19,4 +19,7 @@ module Rosstour::Documents
   class TourSrc < Document
     attr_accessor :id, :name
   end
+
+  class TourDst < TourSrc
+  end
 end
