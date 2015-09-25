@@ -1,0 +1,9 @@
+{
+	"success":true,
+	"data":{
+		"list":[
+			{"id":1,"name":"AI","comment":"Все включено+местные напитки","num":4},
+			{"id":2,"name":"BB","comment":"Только завтрак","num":10}
+		]
+	}
+}

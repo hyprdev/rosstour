@@ -95,4 +95,66 @@ describe Rosstour::Services::Tours do
       end
     end
   end
+
+  describe '#tours_zones' do
+    it 'should not throw error' do
+      expect{ rosstour.tours_zones }.not_to raise_error
+    end
+
+    it 'should return array' do
+      expect( rosstour.tours_zones ).to be_a Array
+    end
+
+    describe 'returned array' do
+      it 'should not be empty' do
+        expect( rosstour.tours_zones ).not_to be_empty
+      end
+
+      it 'should consist of documents' do
+        all_documents = rosstour.tours_zones.all? do |document|
+          document.is_a? Rosstour::TourZone
+        end
+        expect( all_documents ).to be true
+      end
+    end
+
+    describe 'returned document' do
+      let(:document) {rosstour.tours_zones.first}
+      it 'should have Id field' do
+        expect( document ).to respond_to :id
+        expect( document ).not_to be nil
+      end
+    end
+  end
+
+  describe '#tours_meals' do
+    it 'should not throw error' do
+      expect{ rosstour.tours_meals }.not_to raise_error
+    end
+
+    it 'should return array' do
+      expect( rosstour.tours_meals ).to be_a Array
+    end
+
+    describe 'returned array' do
+      it 'should not be empty' do
+        expect( rosstour.tours_meals ).not_to be_empty
+      end
+
+      it 'should consist of documents' do
+        all_documents = rosstour.tours_meals.all? do |document|
+          document.is_a? Rosstour::TourMeal
+        end
+        expect( all_documents ).to be true
+      end
+    end
+
+    describe 'returned document' do
+      let(:document) {rosstour.tours_meals.first}
+      it 'should have Id field' do
+        expect( document ).to respond_to :id
+        expect( document ).not_to be nil
+      end
+    end
+  end
 end

@@ -26,4 +26,11 @@ module Rosstour::Documents
   class TourOper < TourSrc
     attr_accessor :abbr
   end
+
+  class TourZone < TourSrc
+  end
+
+  class TourMeal < TourSrc
+    attr_accessor :comment, :num
+  end
 end
