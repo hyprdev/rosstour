@@ -213,8 +213,39 @@ describe Rosstour::Services::Tours do
 
     describe 'returned document' do
       let(:document) {rosstour.tours_dates.first}
-      it 'should have Id field' do
+      it 'should have Date field' do
         expect( document ).to respond_to :date
+        expect( document ).not_to be nil
+      end
+    end
+  end
+
+  describe '#tours_nights' do
+    it 'should not throw error' do
+      expect{ rosstour.tours_nights }.not_to raise_error
+    end
+
+    it 'should return array' do
+      expect( rosstour.tours_nights ).to be_a Array
+    end
+
+    describe 'returned array' do
+      it 'should not be empty' do
+        expect( rosstour.tours_nights ).not_to be_empty
+      end
+
+      it 'should consist of documents' do
+        all_documents = rosstour.tours_nights.all? do |document|
+          document.is_a? Rosstour::TourNight
+        end
+        expect( all_documents ).to be true
+      end
+    end
+
+    describe 'returned document' do
+      let(:document) {rosstour.tours_nights.first}
+      it 'should have Id field' do
+        expect( document ).to respond_to :id
         expect( document ).not_to be nil
       end
     end

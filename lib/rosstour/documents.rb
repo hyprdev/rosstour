@@ -41,4 +41,7 @@ module Rosstour::Documents
   class TourDate < Document
     attr_accessor :date
   end
+
+  class TourNight < TourSrc
+  end
 end
