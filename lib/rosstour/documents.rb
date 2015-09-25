@@ -33,4 +33,8 @@ module Rosstour::Documents
   class TourMeal < TourSrc
     attr_accessor :comment, :num
   end
+
+  class TourStar < TourSrc
+    attr_accessor :num
+  end
 end
