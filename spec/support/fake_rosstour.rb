@@ -40,6 +40,10 @@ class FakeRosstour < Sinatra::Base
     json_response 200, 'tours_stars.json'
   end
 
+  get '/gate/index.php', query: {service: 'tours', method: 'dates'} do
+    json_response 200, 'tours_dates.json'
+  end
+
   private
 
   def json_response(response_code, file_name)

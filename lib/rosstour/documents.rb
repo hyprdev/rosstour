@@ -37,4 +37,8 @@ module Rosstour::Documents
   class TourStar < TourSrc
     attr_accessor :num
   end
+
+  class TourDate < Document
+    attr_accessor :date
+  end
 end

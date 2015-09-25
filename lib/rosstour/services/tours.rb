@@ -53,6 +53,15 @@ module Rosstour::Services::Tours
       raise Rosstour::MalformedResponse.new "Unsufficient data: #{list.inspect}"
     end
   end
+  def tours_dates
+    data = api_request 'tours', 'dates'
+    list = data['list']
+    if list.is_a? Array
+      list.map { |date| Rosstour::TourDate.new date }
+    else
+      raise Rosstour::MalformedResponse.new "Unsufficient data: #{list.inspect}"
+    end
+  end
 end
 
 module Rosstour::Services
