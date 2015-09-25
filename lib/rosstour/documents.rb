@@ -22,4 +22,8 @@ module Rosstour::Documents
 
   class TourDst < TourSrc
   end
+
+  class TourOper < TourSrc
+    attr_accessor :abbr
+  end
 end

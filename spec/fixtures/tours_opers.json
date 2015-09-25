@@ -1,0 +1,10 @@
+{
+	"success":true,
+	"data":{
+		"list":[
+			{"id":6,"abbr":"COR","name":"Coral Travel"},
+			{"id":20,"abbr":"PAC","name":"PAC Group"},
+			{"id":8,"abbr":"DKO","name":"Данко"}
+		]
+	}
+}
