@@ -250,4 +250,35 @@ describe Rosstour::Services::Tours do
       end
     end
   end
+
+  describe '#tours_hotels' do
+    it 'should not throw error' do
+      expect{ rosstour.tours_hotels }.not_to raise_error
+    end
+
+    it 'should return array' do
+      expect( rosstour.tours_hotels ).to be_a Array
+    end
+
+    describe 'returned array' do
+      it 'should not be empty' do
+        expect( rosstour.tours_hotels ).not_to be_empty
+      end
+
+      it 'should consist of documents' do
+        all_documents = rosstour.tours_hotels.all? do |document|
+          document.is_a? Rosstour::TourHotel
+        end
+        expect( all_documents ).to be true
+      end
+    end
+
+    describe 'returned document' do
+      let(:document) {rosstour.tours_hotels.first}
+      it 'should have Id field' do
+        expect( document ).to respond_to :id
+        expect( document ).not_to be nil
+      end
+    end
+  end
 end

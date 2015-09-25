@@ -1,0 +1,9 @@
+{
+	"success":true,
+	"data":{
+		"list":[
+			{"id":16078,"name":"Sporthotel","star":"1","zone":"Иглс"},
+			{"id":15911,"name":"Bon Alpina","star":"2","zone":"Иглс"}
+		]
+	}
+}

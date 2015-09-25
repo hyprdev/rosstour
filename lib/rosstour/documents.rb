@@ -44,4 +44,8 @@ module Rosstour::Documents
 
   class TourNight < TourSrc
   end
+
+  class TourHotel < TourSrc
+    attr_accessor :star, :zone
+  end
 end
