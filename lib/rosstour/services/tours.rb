@@ -8,8 +8,9 @@ module Rosstour::Services::Tours
       raise Rosstour::MalformedResponse.new "Unsufficient data: #{list.inspect}"
     end
   end
-  def tours_dsts
-    data = api_request 'tours', 'dsts'
+  def tours_dsts params={}
+    data = api_request 'tours', 'dsts', params
+
     list = data['list']
     if list.is_a? Array
       list.map { |dst| Rosstour::TourDst.new dst }
