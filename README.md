@@ -22,7 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+   # Instantiate object
+   rosstur = Rosstour.new("http://api.ross-tur.ru/")
+   # Get list of tour srcs
+   srcs = rosstour.tours_srcs # => [Rosstour::Documents::TourSrc]
+
 
 ## Development
 
