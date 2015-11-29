@@ -5,22 +5,24 @@ describe Rosstour::Services::Tours do
   let(:rosstour) { Rosstour.new(fake_api_base) }
 
   RSpec.shared_examples "an api collection method" do |method, document_type, document_fields, params = nil|
+    args = [params].reject(&:nil?)
+
     it 'should not throw error' do
-      expect{ rosstour.send(method) }.not_to raise_error
+      expect{ rosstour.send(method, *args) }.not_to raise_error
     end
 
     it 'should return array' do
-      expect( rosstour.send(method) ).to be_a Array
+      expect( rosstour.send(method, *args) ).to be_a Array
     end
 
 
     describe 'returned array' do
       it 'should not be empty' do
-        expect( rosstour.send(method) ).not_to be_empty
+        expect( rosstour.send(method, *args) ).not_to be_empty
       end
 
       it "should consist of documents of type #{document_type}" do
-        proper_type = rosstour.send(method).all? do |document|
+        proper_type = rosstour.send(method, *args).all? do |document|
           document.is_a? document_type
         end
         expect( proper_type ).to be true
@@ -28,7 +30,7 @@ describe Rosstour::Services::Tours do
     end
 
     describe 'returned document' do
-      let(:document) {rosstour.send(method).first}
+      let(:document) {rosstour.send(method, *args).first}
 
       it 'should not be nil' do
         expect( document ).not_to be nil
