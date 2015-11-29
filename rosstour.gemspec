@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.summary       = %q{Ross Tour API wrapper for Ruby }
-  #spec.description   = %q{}
+  spec.description   = %q{Just a ruby wrapper for API provided http://api.ross-tur.ru/}
   spec.homepage      = "https://github.com/hyprdev/rosstour"
   spec.license       = "MIT"
 
@@ -25,9 +25,9 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.3.0"
-  spec.add_development_dependency "webmock", "~> 1.21.0"
-  spec.add_development_dependency "sinatra", "~> 1.4.6"
+  spec.add_development_dependency "rspec", "~> 3.3"
+  spec.add_development_dependency "webmock", "~> 1.21"
+  spec.add_development_dependency "sinatra", "~> 1.4"
   spec.add_development_dependency 'byebug' if RUBY_PLATFORM != 'java'
 
   spec.add_runtime_dependency "httparty", "~> 0.13.5"
