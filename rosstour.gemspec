@@ -6,8 +6,8 @@ require 'rosstour/version'
 Gem::Specification.new do |spec|
   spec.name          = "rosstour"
   spec.version       = Rosstour::VERSION
-  spec.authors       = ["Maksim Burnin"]
-  spec.email         = ["maksim.burnin@gmail.com"]
+  spec.authors       = ["Maksim Burnin", "Mark Frost"]
+  spec.email         = "maksim@hyper-dev.ru"
 
   if spec.respond_to?(:metadata)
     #spec.metadata['allowed_push_host'] = ''
