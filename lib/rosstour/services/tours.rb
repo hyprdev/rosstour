@@ -37,6 +37,11 @@ module Rosstour::Services::Tours
     data = api_request 'tours', 'hotels', params
     prepare_response_collection Rosstour::TourHotel, data
   end
+  def tours_tours params
+    data = api_request 'tours', 'tours', params
+    prepare_response_collection Rosstour::TourTour, data
+  end
+
 end
 
 module Rosstour::Services
