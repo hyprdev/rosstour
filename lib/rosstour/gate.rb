@@ -35,5 +35,22 @@ module Rosstour
 
       responce["data"]
     end
+
+    def check_params(required, params)
+      required.each do |param|
+        Rosstour::MissingParam.new "required parameter #{param}"
+      end
+    end
+
+    def prepare_response_collection(document_class, data)
+      list = data['list']
+      if list.is_a? Array
+        list.map { |hotel| document_class.new hotel }
+      else
+        raise Rosstour::MalformedResponse.new "Unsufficient data: #{list.inspect}"
+      end
+    end
+
+
   end
 end

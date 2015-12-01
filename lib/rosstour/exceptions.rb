@@ -6,4 +6,5 @@ module Rosstour::Exceptions
   class Unauthorized < Error; end
   class MalformedRequest < Error; end
   class MalformedResponse < Error; end
+  class MissingParam < MalformedRequest; end
 end
