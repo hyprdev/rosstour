@@ -8,7 +8,7 @@ module Rosstour::Services::Tours
       raise Rosstour::MalformedResponse.new "Unsufficient data: #{list.inspect}"
     end
   end
-  def tours_dsts params={}
+  def tours_dsts params
     data = api_request 'tours', 'dsts', params
 
     list = data['list']
@@ -18,8 +18,8 @@ module Rosstour::Services::Tours
       raise Rosstour::MalformedResponse.new "Unsufficient data: #{list.inspect}"
     end
   end
-  def tours_opers
-    data = api_request 'tours', 'opers'
+  def tours_opers params
+    data = api_request 'tours', 'opers', params
     list = data['list']
     if list.is_a? Array
       list.map { |oper| Rosstour::TourOper.new oper }
@@ -27,8 +27,8 @@ module Rosstour::Services::Tours
       raise Rosstour::MalformedResponse.new "Unsufficient data: #{list.inspect}"
     end
   end
-  def tours_zones
-    data = api_request 'tours', 'zones'
+  def tours_zones params
+    data = api_request 'tours', 'zones', params
     list = data['list']
     if list.is_a? Array
       list.map { |zone| Rosstour::TourZone.new zone }
@@ -36,8 +36,8 @@ module Rosstour::Services::Tours
       raise Rosstour::MalformedResponse.new "Unsufficient data: #{list.inspect}"
     end
   end
-  def tours_meals
-    data = api_request 'tours', 'meals'
+  def tours_meals params
+    data = api_request 'tours', 'meals', params
     list = data['list']
     if list.is_a? Array
       list.map { |meal| Rosstour::TourMeal.new meal }
@@ -45,8 +45,8 @@ module Rosstour::Services::Tours
       raise Rosstour::MalformedResponse.new "Unsufficient data: #{list.inspect}"
     end
   end
-  def tours_stars
-    data = api_request 'tours', 'stars'
+  def tours_stars params
+    data = api_request 'tours', 'stars', params
     list = data['list']
     if list.is_a? Array
       list.map { |star| Rosstour::TourStar.new star }
@@ -54,8 +54,8 @@ module Rosstour::Services::Tours
       raise Rosstour::MalformedResponse.new "Unsufficient data: #{list.inspect}"
     end
   end
-  def tours_dates
-    data = api_request 'tours', 'dates'
+  def tours_dates params
+    data = api_request 'tours', 'dates', params
     list = data['list']
     if list.is_a? Array
       list.map { |date| Rosstour::TourDate.new date }
@@ -63,8 +63,8 @@ module Rosstour::Services::Tours
       raise Rosstour::MalformedResponse.new "Unsufficient data: #{list.inspect}"
     end
   end
-  def tours_nights
-    data = api_request 'tours', 'nights'
+  def tours_nights params
+    data = api_request 'tours', 'nights', params
     list = data['list']
     if list.is_a? Array
       list.map { |night| Rosstour::TourNight.new night }
@@ -72,8 +72,8 @@ module Rosstour::Services::Tours
       raise Rosstour::MalformedResponse.new "Unsufficient data: #{list.inspect}"
     end
   end
-  def tours_hotels
-    data = api_request 'tours', 'hotels'
+  def tours_hotels params
+    data = api_request 'tours', 'hotels', params
     list = data['list']
     if list.is_a? Array
       list.map { |hotel| Rosstour::TourHotel.new hotel }

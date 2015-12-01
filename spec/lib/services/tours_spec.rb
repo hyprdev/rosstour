@@ -53,69 +53,82 @@ describe Rosstour::Services::Tours do
 
   describe '#tours_dsts' do
     fields = [:id, :name]
-    context "without params" do
-      it_behaves_like "an api collection method",
-        :tours_dsts,
-        Rosstour::TourDst,
-        fields
-    end
-    context "with params" do
-      params = {src: 123}
+    params = {src: 123}
 
-      it_behaves_like "an api collection method",
-        :tours_dsts,
-        Rosstour::TourDst,
-        fields,
-        params
-    end
+    it_behaves_like "an api collection method",
+      :tours_dsts,
+      Rosstour::TourDst,
+      fields,
+      params
   end
 
   describe '#tours_opers' do
+    params = {src: 123}
+
     it_behaves_like "an api collection method",
       :tours_opers,
       Rosstour::TourOper,
-      [:id, :name, :abbr]
+      [:id, :name, :abbr],
+      params
   end
 
   describe '#tours_zones' do
+    params = {src: 123}
+
     it_behaves_like "an api collection method",
       :tours_zones,
       Rosstour::TourZone,
-      [:id, :name]
+      [:id, :name],
+      params
   end
 
   describe '#tours_meals' do
+    params = {src: 123}
+
     it_behaves_like "an api collection method",
       :tours_meals,
       Rosstour::TourMeal,
-      [:id, :name, :comment, :num]
+      [:id, :name, :comment, :num],
+      params
   end
 
   describe '#tours_stars' do
+    params = {src: 123}
+
     it_behaves_like "an api collection method",
       :tours_stars,
       Rosstour::TourStar,
-      [:id, :name, :num]
+      [:id, :name, :num],
+      params
   end
 
   describe '#tours_dates' do
+    params = {src: 123}
+
     it_behaves_like "an api collection method",
       :tours_dates,
       Rosstour::TourDate,
-      [:date]
+      [:date],
+      params
   end
 
   describe '#tours_nights' do
+    params = {src: 123}
+
     it_behaves_like "an api collection method",
       :tours_nights,
       Rosstour::TourNight,
-      [:id, :name]
+      [:id, :name],
+      params
   end
 
   describe '#tours_hotels' do
+    params = {src: 123}
+
     it_behaves_like "an api collection method",
       :tours_hotels,
       Rosstour::TourHotel,
-      [:id, :name, :star, :zone]
+      [:id, :name, :star, :zone],
+      params
   end
 end
