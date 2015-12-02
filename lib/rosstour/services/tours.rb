@@ -147,7 +147,7 @@ module Rosstour::Services::Tours
 
     day = settings[:day]
     day = [day, day] if(settings[:day].is_a? Date)
-    day.map{|d| d.strftime "%d.%m.%Y" }.join(',') if day.is_a? Array
+    day = day.map{|d| d.strftime "%d.%m.%Y" }.join(',') if day.is_a? Array
 
     night = settings[:night]
     night = (night..night) if night.is_a? Integer
