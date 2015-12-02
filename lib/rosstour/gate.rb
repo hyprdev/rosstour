@@ -20,7 +20,7 @@ module Rosstour
       result = self.class.get '/gate/index.php', options
 
       unless result.code == 200
-        raise Rosstour::MalformedResponse.new "Service respond with code #{result.code}: #{responce.inspect}"
+        raise Rosstour::MalformedResponse.new "Service respond with code #{result.code}: #{result.inspect}"
       end
 
       begin
