@@ -175,6 +175,7 @@ module Rosstour::Services::Tours
       src: settings[:src],
       dst: settings[:dst],
       oper: settings[:oper],
+      adult: settings[:adult],
       child: child,
       day: day,
       night: night,
@@ -185,8 +186,10 @@ module Rosstour::Services::Tours
       hotel: hotel,
       peace: peace,
       page: settings[:page],
+      a: "find"
     }
 
+    check_params params, [:src, :dst, :oper, :adult]
     data = api_request 'tours', 'tours', params
     prepare_response_collection Rosstour::TourTour, data
   end
