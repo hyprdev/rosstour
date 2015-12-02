@@ -131,4 +131,20 @@ describe Rosstour::Services::Tours do
       [:id, :name, :star, :zone],
       params
   end
+
+  describe '#tours_tours' do
+    params = {src: 123}
+    fields = [
+      :dayBegin, :nights, :hotels, :men, :acc, :fromArea, :toArea,
+      :price, :prices, :tourLink, :tourClaim, :operId, :visaLink,
+      :fuelLink, :flightStops, :dayBeg, :dayEnd, :priceInRUR, :creditPrice, :ID
+    ]
+
+    it_behaves_like "an api collection method",
+      :tours_tours,
+      Rosstour::TourTour,
+      fields,
+      params
+  end
+
 end
