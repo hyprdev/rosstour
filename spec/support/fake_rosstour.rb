@@ -52,6 +52,9 @@ class FakeRosstour < Sinatra::Base
     json_response 200, 'tours_hotels.json'
   end
 
+  get '/gate/index.php', query: {service: 'tours', method: 'tours'} do
+    json_response 200, 'tours_tours.json'
+  end
 
   private
 
