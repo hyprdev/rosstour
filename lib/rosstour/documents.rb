@@ -51,7 +51,7 @@ module Rosstour::Documents
 
   class TourTour < TourSrc
     attr_accessor(
-      :dayBegin, :nights, :hotels, :men, :acc, :fromArea, :toArea,
+      :dayBegin, :nights, :hotels, :ourHotels, :men, :acc, :fromArea, :toArea,
       :price, :prices, :tourLink, :tourClaim, :operId, :visaLink,
       :fuelLink, :flightStops, :dayBeg, :dayEnd, :priceInRUR, :creditPrice, :ID
     )
