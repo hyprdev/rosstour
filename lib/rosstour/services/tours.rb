@@ -164,7 +164,10 @@ module Rosstour::Services::Tours
     hotel = settings[:hotel] || 'true'
     hotel = (['false'] + hotel).join(',') if hotel.is_a? Array
 
-    stars = settings[:stars] || 'true'
+    star = settings[:stars] || 'true'
+    star = (['false'] + star).join(',') if star.is_a? Array
+
+    stars = settings[:stars]
 
     params = {
       src: settings[:src],
@@ -176,6 +179,7 @@ module Rosstour::Services::Tours
       night: night,
       price: price,
       town: town,
+      star: star,
       stars: stars,
       meal: meal,
       hotel: hotel,
