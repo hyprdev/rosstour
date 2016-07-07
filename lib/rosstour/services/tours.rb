@@ -74,7 +74,7 @@ module Rosstour::Services::Tours
   #   Specifies a list of city IDs, aka zones.
   #   Use <tt>nil</tt> if you don't wat to narrow down the search.
   #   Defaults to nil
-  # @option options [Array<Integer>] :star
+  # @option options [Array<Integer>] :stars
   #   Specifies a list of hotel star-rating IDs e.g. <em>5*</em>.
   #   Use <tt>nil</tt> if you don't want to narrow down the search.
   #   Defaults to nil
@@ -113,10 +113,7 @@ module Rosstour::Services::Tours
   #   first element is a boolean flag, <tt>"any,id,id,..."</tt>,
   #   e.g. <tt>"false,1,2,3"</tt> for specific list, or, <tt>"true"</tt> for
   #   all availible
-  # * <tt>:star</tt> -- Comma-separated lists of hotel star-ratings,
-  #   first element is a boolean flag, <tt>"any,id,id,..."</tt>,
-  #   e.g. <tt>"false,1,2,3"</tt> for specific list, or, <tt>"true"</tt> for
-  #   all availible
+  # * <tt>:stars[]</tt> -- Array of of hotel star-ratings,
   # * <tt>:meal</tt> -- Comma-separated lists of service levels,
   #   first element is a boolean flag, <tt>"any,id,id,..."</tt>,
   #   e.g. <tt>"false,1,2,3"</tt> for specific list, or, <tt>"true"</tt> for
@@ -161,15 +158,13 @@ module Rosstour::Services::Tours
     town = settings[:town] || 'true'
     town = (['false'] + town).join(',') if town.is_a? Array
 
-    star = settings[:star] || 'true'
-    star = (['false'] + star).join(',') if star.is_a? Array
-
     meal = settings[:meal] || 'true'
     meal = (['false'] + meal).join(',') if meal.is_a? Array
 
     hotel = settings[:hotel] || 'true'
     hotel = (['false'] + hotel).join(',') if hotel.is_a? Array
 
+    stars = settings[:stars] || 'true'
 
     params = {
       src: settings[:src],
@@ -181,7 +176,7 @@ module Rosstour::Services::Tours
       night: night,
       price: price,
       town: town,
-      star: star,
+      stars: stars,
       meal: meal,
       hotel: hotel,
       peace: peace,
